@@ -1,0 +1,113 @@
+.scrollable-container {
+    scrollbar-width: none; /* pentru Firefox */
+    -ms-overflow-style: none; /* pentru Internet Explorer și Edge */
+}
+
+.scrollable-container::-webkit-scrollbar {
+    display: none; /* pentru WebKit (Chrome, Safari) */
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4px;
+}
+
+.message-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.message-row.user {
+    justify-content: flex-end;
+}
+
+.message-row.other {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 75%;
+    word-wrap: break-word;
+    position: relative;
+}
+
+.message-row.no-avatar .message-bubble {
+    margin-left: 0; /* Elimină marginea când nu este avatar */
+}
+
+.message-bubble.user {
+    background-color: #007bff; /* Verde WhatsApp pentru mesaje trimise */
+    align-self: flex-end;
+    margin-right: 10px;
+}
+
+.message-bubble.user::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #007bff transparent transparent transparent;
+}
+
+.message-bubble.other {
+    background-color: #8e44ad; /* Alb pentru mesaje primite */
+    align-self: flex-start;
+    margin-left: 15px;
+}
+
+.message-bubble.other::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: #8e44ad transparent transparent transparent;
+}
+.message-bubble.no-tail::after {
+    content: none;
+}
+
+.message-bubble.with-tail {
+    margin-bottom: 20px; /* Spațiu mai mare între mesajele cu coadă și următoarele mesaje */
+}
+
+.message-timestamp {
+    font-size: 10px;
+    color: white;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.message-seen-icon {
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 4px;
+}
+
+.message-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.date-divider {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 14px;
+    color: gray;
+}
